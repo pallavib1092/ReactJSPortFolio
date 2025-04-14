@@ -49,7 +49,6 @@
     line-height: 1.5;
   }
   
-  /* Light mode styles */
   .app.light .project-card {
     background-color: #f3f3f3;
     color: black;
