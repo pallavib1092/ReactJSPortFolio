@@ -1,0 +1,164 @@
+/* .contact-section {
+    padding: 80px 20px;
+    background-color: inherit;
+    color: inherit;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #7b61ff;
+  }
+  
+  .contact-text {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    color: #000;
+  }
+  
+  .contact-form button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #7b61ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #684ee0;
+  }
+  
+  /* Dark mode adjustments
+  .app.dark .contact-form input,
+  .app.dark .contact-form textarea {
+    background-color: #1f2937;
+    color: white;
+    border: 1px solid #555;
+  }
+   */
+
+
+   .contact-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: inherit;
+    color: inherit;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .contact-section.dark {
+    background-color: #0b1120;
+    color: white;
+  }
+  
+  .contact-section.light {
+    background-color: #f5f5f5;
+    color: black;
+  }
+  
+  .contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-btn {
+    padding: 10px 20px;
+    background-color: #4a5568;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-section.light .contact-btn {
+    background-color: #e2e8f0;
+    color: black;
+  }
+  
+  .contact-section.dark .contact-btn {
+    background-color: #2d3748;
+    color: white;
+  }
+  
+  .contact-description {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+  }
+  
+  .icon, .copy-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .social-icons {
+    margin-top: 20px;
+  }
+  
+  .icons-row {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .icons-row a {
+    font-size: 24px;
+    color: inherit;
+    transition: transform 0.2s;
+  }
+  
+  .icons-row a:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .contact-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
