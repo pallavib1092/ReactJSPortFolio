@@ -156,9 +156,34 @@
   
   /* Responsive */
   @media (max-width: 768px) {
+    .contact-info {
+      padding: 1rem;
+    }
+  
     .contact-item {
-      flex-direction: column;
-      align-items: flex-start;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      text-align: center;
+      gap: 8px;
+    }
+  
+    .contact-item span {
+      display: inline-block;
+      word-break: break-word;
+      white-space: nowrap;
+      overflow-wrap: break-word;
+      max-width: 100%;
     }
   }
+
+  @media (max-width: 480px) {
+    .contact-item {
+      font-size: 16px;
+    }
   
+    .icon, .copy-icon {
+      font-size: 20px;
+    }
+  }

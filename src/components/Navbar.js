@@ -22,12 +22,10 @@ class Navbar extends Component {
 
     return (
       <nav className="navbar">
-        <div className="logo">    <a href="#" className="logo-text">Pallavi</a>
-        
-        <button className="hamburger" onClick={this.toggleMenu}>
-            ☰
-          </button>
-        </div>
+       <div className="navbar-header">
+    <a href="#" className="logo-text">Pallavi</a>
+    <button className="hamburger" onClick={this.toggleMenu}>☰</button>
+  </div>
         <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>

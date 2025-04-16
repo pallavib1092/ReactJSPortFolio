@@ -1,151 +1,61 @@
-import React from "react";
+import React, { Component } from 'react';
+import './Skills.css';
+import {
+  FaHtml5, FaCss3Alt, FaJsSquare, FaReact,
+  FaNodeJs, FaGitAlt, FaGithub
+} from 'react-icons/fa';
+import {
+  SiExpress, SiMongodb, SiPostman, SiNpm,
+} from 'react-icons/si';
 
-import "../App.css";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { MdAlternateEmail } from "react-icons/md";
-import { Link } from "react-router-dom";
-import { useTheme } from '../Context/ThemeContext';
-const Skills = () => {
-  const { theme, toggleTheme } = useTheme()
-  return (
-    <div>
-      <div className="portfolio-container">
-        <nav className="navbar">
-          <ul className="nav-links">
-          <li><Link to="/about">About</Link></li>
-          <li><a href="#work">Work</a></li>
-            <li><a href="#about">Testimonials</a></li>
-            <li><a href="#about">Contact</a></li>
-            <li>
-              <button className="download-btn">Download CV</button>
-            </li>
-            <li>
-              <button onClick={toggleTheme} className="theme-toggle">
-                {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
-              </button>
-              
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <section className="hero">
-        <div className="hero-text">
-          <h1>Hi, I’m Pallavi 👋</h1>
-          <p>
-          I am a front end expert.
-          </p>
-          <div className="hero-details">
-            <span>✅ Available for new projects</span>
+class Skills extends Component {
+  renderCategory = (title, skills) => (
+    <div className="skills-category">
+      <h3>{title}</h3>
+      <div className="skills-grid">
+        {skills.map(({ Icon, label }, index) => (
+          <div key={index} className="skill-tile">
+            <Icon className="skill-icon" />
+            <span>{label}</span>
           </div>
-        </div>
-         <div className="socials">
-                  <a href="mailto:you@example.com" className="icon-box">
-                    <MdAlternateEmail />
-                  </a>
-                  <a
-                    href="https://github.com/yourusername"
-                    target="_blank"
-                    rel="noopener noreferrerI"
-                    className="icon-box"
-                  >
-                    <FaGithub />
-                  </a>
-                  <a
-                    href="https://linkedin.com/in/yourusername"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="icon-box"
-                  >
-                    <FaLinkedinIn />
-                  </a>
-                </div>
-      </section>
-      <section id="about" className="about-section">
-          <h1>About Me</h1>
-        <div className="about-img">
-        <img
-          src="https://img.freepik.com/premium-vector/developer-smart-woman-with-white-hair-works-laptop-3d-rendered-icon-isolated_831490-5401.jpg"
-          alt="Profile"
-          className="profile-img"
-        />
-        </div>
-        <div className="about-text">
-          <h2>Curious about me? Here you have it:</h2>
-          <p>
-            I’m a passionate, self-proclaimed designer who specializes in full
-            stack development (React.js & Node.js). I am very enthusiastic about
-            bringing the technical and visual aspects of digital products to
-            life. 
-          </p>
-          <p>
-            I am very much a progressive thinker and enjoy working on products
-            end to end, from ideation all the way to development.
-          </p>
-          <p>
-            When I’m not in full-on developer mode, you can find me hovering
-            around on twitter or on indie hacker, witnessing the journey of
-            early startups or enjoying some free time. You can follow me on
-            Twitter where I share tech-related bites and build in public, or you
-            can follow me on GitHub.
-          </p>
-          <ul>
-            <li>🎓 B.Tech. in Electrical & Electronics Engineering</li>
-            <li>💼 Full time Developer</li>
-            <li>📚 Avid learner</li>
-            <li>💡 Aspiring indie hacker</li>
-          </ul>
-          <p>
-            One last thing, I’m available for freelance work, so feel free to
-            reach out and say hello! I promise I don’t bite 😊
-          </p>
-        </div>
-      </section>
-
-      <section id="work" className="work-section">
-     <div>
-         <h1>Work Experience</h1>
-     </div>
-        <div className="work-text">
-          <h2>Curious about me? Here you have it:</h2>
-          <p>
-            I’m a passionate, self-proclaimed designer who specializes in full
-            stack development (React.js & Node.js). I am very enthusiastic about
-            bringing the technical and visual aspects of digital products to
-            life. User experience, pixel perfect design, and writing clean,
-            readable, highly performant code matters to me.
-          </p>
-          <p>
-            I am very much a progressive thinker and enjoy working on products
-            end to end, from ideation all the way to development.
-          </p>
-          <p>
-            When I’m not in full-on developer mode, you can find me hovering
-            around on twitter or on indie hacker, witnessing the journey of
-            early startups or enjoying some free time. You can follow me on
-            Twitter where I share tech-related bites and build in public, or you
-            can follow me on GitHub.
-          </p>
-          <ul>
-            <li>🎓 B.Tech. in Electrical & Electronics Engineering</li>
-            <li>💼 Full time developer</li>
-            <li>📚 Avid learner</li>
-            <li>💡 Aspiring indie hacker</li>
-          </ul>
-          <p>
-            One last thing, I’m available for freelance work, so feel free to
-            reach out and say hello! I promise I don’t bite 😊
-          </p>
-        </div>
-        <div className="work-img">
-        <img
-          src="https://img.freepik.com/premium-vector/developer-smart-woman-with-white-hair-works-laptop-3d-rendered-icon-isolated_831490-5401.jpg"
-          alt="Profile"
-          className="profile-img"
-        />
-        </div>
-      </section>
+        ))}
+      </div>
     </div>
   );
-};
+
+  render() {
+    const { theme } = this.props;
+
+    const frontendSkills = [
+      { Icon: FaHtml5, label: 'HTML5' },
+      { Icon: FaCss3Alt, label: 'CSS3' },
+      { Icon: FaJsSquare, label: 'JavaScript' },
+      { Icon: FaReact, label: 'React' }
+    ];
+
+    const backendSkills = [
+      { Icon: FaNodeJs, label: 'Node.js' },
+      { Icon: SiExpress, label: 'Express' },
+      { Icon: SiMongodb, label: 'MongoDB' }
+    ];
+
+    const toolsSkills = [
+      { Icon: FaGitAlt, label: 'Git' },
+      { Icon: FaGithub, label: 'GitHub' },
+    
+      { Icon: SiPostman, label: 'Postman' },
+      { Icon: SiNpm, label: 'NPM' },
+    ];
+
+    return (
+      <section className={`skills-section ${theme}`} id="skills">
+        <h2 className="section-title">Skills</h2>
+        {this.renderCategory('Frontend', frontendSkills)}
+        {this.renderCategory('Backend', backendSkills)}
+        {this.renderCategory('Tools', toolsSkills)}
+      </section>
+    );
+  }
+}
 
 export default Skills;
